@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Kanonji.Util.Extension {
+namespace Kanonji.Util.Extensions {
+
 	public static class BoundsExtension {
 
 		public static Vector3 GetRandomVector3Within(this Bounds self) {

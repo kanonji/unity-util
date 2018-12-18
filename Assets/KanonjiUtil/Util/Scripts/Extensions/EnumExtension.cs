@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace Kanonji.Util.Extension {
+namespace Kanonji.Util.Extensions {
+
 	public static class EnumExtension {
 
 		/// <summary>
