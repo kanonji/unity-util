@@ -1,7 +1,8 @@
 ﻿using System;
 
 namespace Kanonji.Util.Extension {
-	public static class EnumExtensions {
+	public static class EnumExtension {
+
 		/// <summary>
 		/// 現在のインスタンスで 1 つ以上のビット フィールドが設定されているかどうかを判断します
 		/// http://baba-s.hatenablog.com/entry/2014/08/10/130145

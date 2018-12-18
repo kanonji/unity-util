@@ -1,5 +1,6 @@
 ﻿namespace Kanonji.Util.Extension {
-	public static class StringAsUnityRichTextExtensions {
+
+	public static class StringAsUnityRichTextExtension {
 
 		public static string Color(this string str, string color) {
 			return string.Format("<color={0}>{1}</color>", color, str);
