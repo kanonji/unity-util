@@ -23,16 +23,16 @@ namespace Kanonji.Util.Extensions {
 			}
 		}
 
-		public static bool IsStretchedX(this RectTransform rectTransform) {
-			return 0 == rectTransform.anchorMin.x && 1 == rectTransform.anchorMax.x;
+		public static bool IsStretchedX(this RectTransform self) {
+			return 0 == self.anchorMin.x && 1 == self.anchorMax.x;
 		}
 
-		public static bool IsStretchedY(this RectTransform rectTransform) {
-			return 0 == rectTransform.anchorMin.y && 1 == rectTransform.anchorMax.y;
+		public static bool IsStretchedY(this RectTransform self) {
+			return 0 == self.anchorMin.y && 1 == self.anchorMax.y;
 		}
 
-		public static bool IsStretchedBoth(this RectTransform rectTransform) {
-			return rectTransform.IsStretchedX() && rectTransform.IsStretchedY();
+		public static bool IsStretchedBoth(this RectTransform self) {
+			return self.IsStretchedX() && self.IsStretchedY();
 		}
 
 		public static RectTransformOffsets GetOffsets(this RectTransform rectTransform) {
@@ -43,31 +43,31 @@ namespace Kanonji.Util.Extensions {
 			return new RectTransformOffsets(left, top, right, bottom);
 		}
 
-		public static void SetLeft(this RectTransform rectTransform, float left) {
-			RectTransformOffsets offsets = rectTransform.GetOffsets();
-			rectTransform.SetOffsets(left, offsets.top, offsets.right, offsets.bottom);
+		public static void SetLeft(this RectTransform self, float left) {
+			RectTransformOffsets offsets = self.GetOffsets();
+			self.SetOffsets(left, offsets.top, offsets.right, offsets.bottom);
 		}
 
-		public static void SetTop(this RectTransform rectTransform, float top) {
-			RectTransformOffsets offsets = rectTransform.GetOffsets();
-			rectTransform.SetOffsets(offsets.left, top, offsets.right, offsets.bottom);
+		public static void SetTop(this RectTransform self, float top) {
+			RectTransformOffsets offsets = self.GetOffsets();
+			self.SetOffsets(offsets.left, top, offsets.right, offsets.bottom);
 		}
 
-		public static void SetRight(this RectTransform rectTransform, float right) {
-			RectTransformOffsets offsets = rectTransform.GetOffsets();
-			rectTransform.SetOffsets(offsets.left, offsets.top, right, offsets.bottom);
+		public static void SetRight(this RectTransform self, float right) {
+			RectTransformOffsets offsets = self.GetOffsets();
+			self.SetOffsets(offsets.left, offsets.top, right, offsets.bottom);
 		}
 
-		public static void SetBottom(this RectTransform rectTransform, float bottom) {
-			RectTransformOffsets offsets = rectTransform.GetOffsets();
-			rectTransform.SetOffsets(offsets.left, offsets.top, offsets.right, bottom);
+		public static void SetBottom(this RectTransform self, float bottom) {
+			RectTransformOffsets offsets = self.GetOffsets();
+			self.SetOffsets(offsets.left, offsets.top, offsets.right, bottom);
 		}
 
-		public static void SetOffsets(this RectTransform rectTransform, float left, float top, float right, float bottom) {
-			rectTransform.offsetMin = new Vector2(left, bottom);
-			right = right * (rectTransform.IsStretchedX() ? -1 : 1);
-			top = top * (rectTransform.IsStretchedY() ? -1 : 1);
-			rectTransform.offsetMax = new Vector2(right, top);
+		public static void SetOffsets(this RectTransform self, float left, float top, float right, float bottom) {
+			self.offsetMin = new Vector2(left, bottom);
+			right = right * (self.IsStretchedX() ? -1 : 1);
+			top = top * (self.IsStretchedY() ? -1 : 1);
+			self.offsetMax = new Vector2(right, top);
 		}
 	}
 }
