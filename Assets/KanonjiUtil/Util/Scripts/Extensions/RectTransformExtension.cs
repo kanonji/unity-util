@@ -93,5 +93,19 @@ namespace Kanonji.Util.Extensions {
 		public static void SetSize(this RectTransform self, float width, float height) {
 			self.sizeDelta = new Vector2(width, height);
 		}
+
+		public static Vector2 GetParentCanvasSize(this RectTransform self) {
+			return self.GetComponentInParent<Canvas>().GetComponent<RectTransform>().sizeDelta;
+		}
+
+		public static float CalcWidthByPercentOfParent(this RectTransform self, float percent) {
+			Vector2 canvasSize = self.GetParentCanvasSize();
+			return canvasSize.x / 100 * percent;
+		}
+
+		public static float CalcHeightByPercentOfParent(this RectTransform self, float percent) {
+			Vector2 canvasSize = self.GetParentCanvasSize();
+			return canvasSize.y / 100 * percent;
+		}
 	}
 }
