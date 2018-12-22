@@ -69,5 +69,29 @@ namespace Kanonji.Util.Extensions {
 			top = top * (self.IsStretchedY() ? -1 : 1);
 			self.offsetMax = new Vector2(right, top);
 		}
+
+		public static float GetWidth(this RectTransform self) {
+			return self.sizeDelta.x;
+		}
+
+		public static float GetHeight(this RectTransform self) {
+			return self.sizeDelta.y;
+		}
+
+		public static void SetWidth(this RectTransform self, float width) {
+			var size = self.sizeDelta;
+			size.x = width;
+			self.sizeDelta = size;
+		}
+
+		public static void SetHeight(this RectTransform self, float height) {
+			var size = self.sizeDelta;
+			size.y = height;
+			self.sizeDelta = size;
+		}
+
+		public static void SetSize(this RectTransform self, float width, float height) {
+			self.sizeDelta = new Vector2(width, height);
+		}
 	}
 }
