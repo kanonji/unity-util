@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2270f25068ccdb43afd57a823dcb490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logPanelPrefab: {fileID: 114833364223257398, guid: 1398b02bcad8f0d4482492b6f2290019,
+  logPanelPrefab: {fileID: 114628696127722430, guid: 35cdfc311cca9f3409e839544fbcc26f,
     type: 2}
 --- !u!114 &114851470995929022
 MonoBehaviour:
